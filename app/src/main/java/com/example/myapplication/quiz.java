@@ -40,7 +40,7 @@ public class quiz extends AppCompatActivity {
         buttonOption1 = findViewById(R.id.buttonOption1);
         buttonOption2 = findViewById(R.id.buttonOption2);
         buttonOption3 = findViewById(R.id.buttonOption3);
-        scoreTextView = findViewById(R.id.scoreTextView);
+        scoreTextView = findViewById(R.id.scoreTextView );
         // Load the image data from SharedPreferences
         loadImageData();
 
