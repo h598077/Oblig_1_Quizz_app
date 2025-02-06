@@ -66,7 +66,7 @@ public class gallery2 extends AppCompatActivity {
 
 
         // If data exists, use it
-        if (savedImageResources != null && savedImageTexts != null) {
+        if (savedImageResources.size()!=0 && savedImageTexts.size()!=0) {
 
             imageResources = new ArrayList<>();
             imageTexts = new ArrayList<>();
