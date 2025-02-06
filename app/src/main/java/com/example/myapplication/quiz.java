@@ -62,7 +62,7 @@ public class quiz extends AppCompatActivity {
         imageResources = new ArrayList<>();
         imageTexts = new ArrayList<>();
 
-        if (savedImageResources.size()!=0 && savedImageTexts.size()!=0) {
+        if (savedImageResources.size()!=0  && savedImageTexts.size()!=0) {
             for (String res : savedImageResources) {
                 imageResources.add(Integer.parseInt(res));
             }
