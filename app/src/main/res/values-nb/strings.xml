@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="button_a_label">Knapp A</string>
+    <string name="button_b_label">Knapp B</string>
+    <string name="helloworld">Hei verden!</string>
+</resources>
