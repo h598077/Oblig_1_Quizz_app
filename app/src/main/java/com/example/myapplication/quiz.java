@@ -45,10 +45,20 @@ public class quiz extends AppCompatActivity {
         buttonOption3 = findViewById(R.id.buttonOption3);
         scoreTextView = findViewById(R.id.scoreTextView );
 
+       // Savescore
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String score= (sharedPreferences.getString("Score",""));
+        if(!score.isEmpty()){
+            currentScore = Integer.parseInt(score);
+            String scoreText = "Score: " + currentScore;
+            scoreTextView.setText(scoreText);
+        }
+
+
         // Load the image data from SharedPreferences
         loadImageData();
 
-        // Start the quiz
+        // Start the quiz if there are pictures
         if(!error){
             showNextQuestion();
         }
@@ -139,5 +149,15 @@ public class quiz extends AppCompatActivity {
     private void updateScore() {
         String scoreText = "Score: " + currentScore  ;
         scoreTextView.setText(scoreText);
+    }
+// When back button is used
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putString("Score",currentScore+"");
+        edit.apply();
     }
 }
