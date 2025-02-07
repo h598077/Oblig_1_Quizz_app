@@ -15,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -41,6 +42,7 @@ public class quiz extends AppCompatActivity {
         buttonOption2 = findViewById(R.id.buttonOption2);
         buttonOption3 = findViewById(R.id.buttonOption3);
         scoreTextView = findViewById(R.id.scoreTextView );
+
         // Load the image data from SharedPreferences
         loadImageData();
 
@@ -68,6 +70,18 @@ public class quiz extends AppCompatActivity {
             }
 
             imageTexts.addAll(savedImageTexts);
+        }else{
+            imageResources = new ArrayList<>(Arrays.asList(
+                    R.drawable.cat1,
+                    R.drawable.cat2,
+                    R.drawable.cat3
+            ));
+
+            imageTexts = new ArrayList<>(Arrays.asList(
+                    "Cat1",
+                    "Cat2",
+                    "Cat3"
+            ));
         }
     }
     // Method to show the next question

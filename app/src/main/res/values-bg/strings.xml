@@ -3,4 +3,5 @@
     <string name="app_name">My Application</string>
     <string name="button_a_label">Бутон А</string>
     <string name="button_b_label">Бутон Б</string>
+    <string name="application">приложение</string>
 </resources>
