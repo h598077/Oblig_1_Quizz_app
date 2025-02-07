@@ -82,7 +82,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
 
 
 
-    public void addImage(int imageRes) {
+    public void addImage() {
         new AlertDialog.Builder(context)
                 .setTitle("Choose an Image to Add")
                 .setItems(imageNames, (dialog, which) -> {
@@ -94,6 +94,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
                     imageResources.add(selectedImage);
                     imageTexts.add(selectedText);
                     notifyItemInserted(imageResources.size() - 1);
+
                 })
                 .setNegativeButton("Cancel", null)
                 .show();

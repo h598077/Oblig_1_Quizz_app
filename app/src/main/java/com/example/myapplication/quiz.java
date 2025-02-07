@@ -30,6 +30,8 @@ public class quiz extends AppCompatActivity {
 
     private TextView scoreTextView;
     private int currentScore = 0;
+
+    private boolean error =false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +49,10 @@ public class quiz extends AppCompatActivity {
         loadImageData();
 
         // Start the quiz
-        showNextQuestion();
+        if(!error){
+            showNextQuestion();
+        }
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -71,17 +76,9 @@ public class quiz extends AppCompatActivity {
 
             imageTexts.addAll(savedImageTexts);
         }else{
-            imageResources = new ArrayList<>(Arrays.asList(
-                    R.drawable.cat1,
-                    R.drawable.cat2,
-                    R.drawable.cat3
-            ));
+            Toast.makeText(this, "No pictures!", Toast.LENGTH_SHORT).show();
+            error=true;
 
-            imageTexts = new ArrayList<>(Arrays.asList(
-                    "Cat1",
-                    "Cat2",
-                    "Cat3"
-            ));
         }
     }
     // Method to show the next question
@@ -96,7 +93,7 @@ public class quiz extends AppCompatActivity {
         // Show the image in the ImageView
         imageView.setImageResource(correctImage);
 
-        // Prepare the options (correct + two random wrong answers)
+        // Prepare the options correct + two random wrong answers
         List<String> options = new ArrayList<>();
         options.add(correctName);
 
